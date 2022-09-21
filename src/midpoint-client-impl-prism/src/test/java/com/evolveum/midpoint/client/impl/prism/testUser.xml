@@ -1,0 +1,97 @@
+<user xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:icfs="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/resource-schema-3" xmlns:org="http://midpoint.evolveum.com/xml/ns/public/common/org-3" xmlns:q="http://prism.evolveum.com/xml/ns/public/query-3" xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" xmlns:t="http://prism.evolveum.com/xml/ns/public/types-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" oid="460f9fa3-b39b-4286-ae5d-73973db3b3ef" version="2">
+    <name>cgrube</name>
+    <metadata>
+        <requestTimestamp>2022-07-04T09:38:14.980Z</requestTimestamp>
+        <requestorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType">
+            <!-- administrator -->
+        </requestorRef>
+        <createTimestamp>2022-07-04T09:38:15.081Z</createTimestamp>
+        <creatorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType">
+            <!-- administrator -->
+        </creatorRef>
+        <createChannel>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#liveSync</createChannel>
+        <createTaskRef oid="cd676958-f369-4a48-8d4f-1caf3471b357" relation="org:default" type="c:TaskType">
+            <!-- LiveSync SourceLDAP -->
+        </createTaskRef>
+        <lastProvisioningTimestamp>2022-07-04T09:38:15.081Z</lastProvisioningTimestamp>
+    </metadata>
+    <operationExecution id="2">
+        <recordType>simple</recordType>
+        <timestamp>2022-07-04T09:38:15.214Z</timestamp>
+        <operation>
+            <objectDelta>
+                <t:changeType>add</t:changeType>
+                <t:objectType>c:UserType</t:objectType>
+            </objectDelta>
+            <executionResult>
+                <operation>com.evolveum.midpoint.model.impl.lens.ChangeExecutor.executeDelta</operation>
+                <status>success</status>
+                <importance>normal</importance>
+                <token>1000000000000002615</token>
+            </executionResult>
+            <objectName>cgrube</objectName>
+        </operation>
+        <operation>
+            <objectDelta>
+                <t:changeType>modify</t:changeType>
+                <t:objectType>c:UserType</t:objectType>
+            </objectDelta>
+            <executionResult>
+                <operation>com.evolveum.midpoint.model.impl.lens.ChangeExecutor.linkShadow</operation>
+                <status>success</status>
+                <importance>normal</importance>
+                <token>1000000000000002616</token>
+            </executionResult>
+            <objectName>cgrube</objectName>
+            <resourceOid>6c7a08f9-2ffa-4d96-a18c-cec0bf3a551f</resourceOid>
+            <resourceName>Source-LDAP</resourceName>
+        </operation>
+        <status>success</status>
+        <initiatorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType">
+            <!-- administrator -->
+        </initiatorRef>
+        <taskRef oid="cd676958-f369-4a48-8d4f-1caf3471b386" relation="org:default" type="c:TaskType">
+            <!-- LiveSync SourceLDAP -->
+        </taskRef>
+        <activityPath/>
+        <channel>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#liveSync</channel>
+    </operationExecution>
+    <assignment id="1">
+        <metadata>
+            <requestTimestamp>2022-07-04T09:38:14.980Z</requestTimestamp>
+            <requestorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType">
+                <!-- administrator -->
+            </requestorRef>
+            <createTimestamp>2022-07-04T09:38:15.081Z</createTimestamp>
+            <creatorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType">
+                <!-- administrator -->
+            </creatorRef>
+            <createChannel>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#liveSync</createChannel>
+            <createTaskRef oid="cd676958-f369-4a48-8d4f-1caf3471b357" relation="org:default" type="c:TaskType">
+                <!-- LiveSync SourceLDAP -->
+            </createTaskRef>
+            <originMappingName>user role</originMappingName>
+        </metadata>
+        <targetRef oid="e6eadfca-0dd2-4115-a961-2b9924ed10e5" relation="org:default" type="c:RoleType">
+            <!-- User -->
+        </targetRef>
+        <activation>
+            <effectiveStatus>enabled</effectiveStatus>
+        </activation>
+    </assignment>
+    <iteration>0</iteration>
+    <iterationToken/>
+    <roleMembershipRef oid="e6eadfca-0dd2-4115-a961-2b9924ed10e5" relation="org:default" type="c:RoleType">
+        <!-- User -->
+    </roleMembershipRef>
+    <linkRef oid="efa0e57f-d8da-411c-b82b-129f534721f5" relation="org:default" type="c:ShadowType">
+        <!-- uid=cgrube,ou=people,ou=source,dc=myorg,dc=com -->
+    </linkRef>
+    <activation>
+        <effectiveStatus>enabled</effectiveStatus>
+        <enableTimestamp>2022-07-04T09:38:14.981Z</enableTimestamp>
+    </activation>
+    <fullName>Claire Grube</fullName>
+    <givenName>Claire</givenName>
+    <familyName>Grube</familyName>
+</user>

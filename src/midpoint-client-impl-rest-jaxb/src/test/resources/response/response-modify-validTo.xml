@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  ~ Copyright (c) 2010-2018 Evolveum
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<apti:executeScriptResponse xmlns:apti="http://midpoint.evolveum.com/xml/ns/public/common/api-types-3"
+							xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3"
+							xmlns:q="http://prism.evolveum.com/xml/ns/public/query-3"
+							xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3"
+							xmlns:t="http://prism.evolveum.com/xml/ns/public/types-3"
+							xmlns:org="http://midpoint.evolveum.com/xml/ns/public/common/org-3"
+							xmlns:icfs="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/resource-schema-3"
+							xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3">
+	<apti:output xmlns:s="http://midpoint.evolveum.com/xml/ns/public/model/scripting-3">
+		<s:dataOutput>
+			<s:item>
+				<s:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 oid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+						 type="c:UserType"
+						 xsi:type="c:ObjectReferenceType"/>
+				<s:result>
+					<operation>com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.process</operation>
+					<status>fatal_error</status>
+					<token>1000000000000000401</token>
+					<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+					<partialResults>
+						<operation>com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute</operation>
+						<status>fatal_error</status>
+						<params>
+							<entry key="value">
+								<paramValue>PRV(oid=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, targetType={http://midpoint.evolveum.com/xml/ns/public/common/common-3}UserType)</paramValue>
+							</entry>
+						</params>
+						<token>1000000000000000402</token>
+						<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+						<partialResults>
+							<operation>com.evolveum.midpoint.model.api.ModelService.getObject</operation>
+							<status>fatal_error</status>
+							<minor>true</minor>
+							<params>
+								<entry key="options"/>
+								<entry key="oid">
+									<paramValue>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</paramValue>
+								</entry>
+								<entry key="class">
+									<paramValue>http://midpoint.evolveum.com/xml/ns/public/common/common-3#UserType</paramValue>
+								</entry>
+							</params>
+							<token>1000000000000000403</token>
+							<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+							<details>com.evolveum.midpoint.util.exception.ObjectNotFoundException: Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.
+								com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.throwObjectNotFoundException(ObjectRetriever.java:220)
+								com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectInternal(ObjectRetriever.java:194)
+								com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectAttempt(ObjectRetriever.java:97)
+								com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.lambda$getObject$0(SqlRepositoryServiceImpl.java:172)
+								com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.executeAttempts(SqlRepositoryServiceImpl.java:192)
+								com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.getObject(SqlRepositoryServiceImpl.java:171)
+								com.evolveum.midpoint.repo.cache.RepositoryCache.getObject(RepositoryCache.java:221)
+								com.evolveum.midpoint.model.impl.ModelObjectResolver.getObject(ModelObjectResolver.java:172)
+								com.evolveum.midpoint.model.impl.controller.ModelController.getObject(ModelController.java:217)
+								com.evolveum.midpoint.model.impl.scripting.helpers.OperationsHelper.getObject(OperationsHelper.java:110)
+								com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute(ResolveExecutor.java:76)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executeAction(ScriptingExpressionEvaluator.java:223)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:202)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:183)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executePipeline(ScriptingExpressionEvaluator.java:232)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:192)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:170)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:146)
+								com.evolveum.midpoint.model.impl.controller.ModelController.evaluateExpression(ModelController.java:2002)
+								com.evolveum.midpoint.model.impl.ModelRestService.executeScript(ModelRestService.java:932)
+								sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+								sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+								sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+								java.lang.reflect.Method.invoke(Method.java:498)
+								org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:179)
+								org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+								org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:192)
+								org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:103)
+								org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:59)
+								org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:96)
+								org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+								org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+								org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:267)
+								org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:247)
+								org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:79)
+								org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+								org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:190)
+								org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)
+								org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:170)
+								org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)
+								org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+								org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:219)
+								org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+								org.eclipse.jetty.server.Server.handle(Server.java:564)
+								org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:317)
+								org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+								org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+								org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)
+								org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+								org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)
+								org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)
+								org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+								org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)
+								org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)
+								org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)
+								java.lang.Thread.run(Thread.java:748)
+							</details>
+							<partialResults>
+								<operation>com.evolveum.midpoint.repo.api.RepositoryService.getObject</operation>
+								<status>fatal_error</status>
+								<minor>true</minor>
+								<params>
+									<entry key="oid">
+										<paramValue>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</paramValue>
+									</entry>
+									<entry key="type">
+										<paramValue>com.evolveum.midpoint.xml.ns._public.common.common_3.UserType</paramValue>
+									</entry>
+								</params>
+								<token>1000000000000000404</token>
+								<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+								<details>com.evolveum.midpoint.util.exception.ObjectNotFoundException: Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.
+									com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.throwObjectNotFoundException(ObjectRetriever.java:220)
+									com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectInternal(ObjectRetriever.java:194)
+									com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectAttempt(ObjectRetriever.java:97)
+									com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.lambda$getObject$0(SqlRepositoryServiceImpl.java:172)
+									com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.executeAttempts(SqlRepositoryServiceImpl.java:192)
+									com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.getObject(SqlRepositoryServiceImpl.java:171)
+									com.evolveum.midpoint.repo.cache.RepositoryCache.getObject(RepositoryCache.java:221)
+									com.evolveum.midpoint.model.impl.ModelObjectResolver.getObject(ModelObjectResolver.java:172)
+									com.evolveum.midpoint.model.impl.controller.ModelController.getObject(ModelController.java:217)
+									com.evolveum.midpoint.model.impl.scripting.helpers.OperationsHelper.getObject(OperationsHelper.java:110)
+									com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute(ResolveExecutor.java:76)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executeAction(ScriptingExpressionEvaluator.java:223)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:202)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:183)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executePipeline(ScriptingExpressionEvaluator.java:232)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:192)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:170)
+									com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:146)
+									com.evolveum.midpoint.model.impl.controller.ModelController.evaluateExpression(ModelController.java:2002)
+									com.evolveum.midpoint.model.impl.ModelRestService.executeScript(ModelRestService.java:932)
+									sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+									sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+									sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+									java.lang.reflect.Method.invoke(Method.java:498)
+									org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:179)
+									org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+									org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:192)
+									org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:103)
+									org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:59)
+									org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:96)
+									org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+									org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+									org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:267)
+									org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:247)
+									org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:79)
+									org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+									org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:190)
+									org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)
+									org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:170)
+									org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)
+									org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+									org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:219)
+									org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+									org.eclipse.jetty.server.Server.handle(Server.java:564)
+									org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:317)
+									org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+									org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+									org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)
+									org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+									org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)
+									org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)
+									org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+									org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)
+									org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)
+									org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)
+									java.lang.Thread.run(Thread.java:748)
+								</details>
+							</partialResults>
+						</partialResults>
+					</partialResults>
+					<partialResults>
+						<operation>com.evolveum.midpoint.model.impl.scripting.actions.ModifyExecutor.execute</operation>
+						<status>success</status>
+						<params>
+							<entry key="value">
+								<paramValue>PRV(oid=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, targetType={http://midpoint.evolveum.com/xml/ns/public/common/common-3}UserType)</paramValue>
+							</entry>
+						</params>
+						<token>1000000000000000405</token>
+					</partialResults>
+				</s:result>
+			</s:item>
+			<s:item>
+				<s:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 oid="229487cb-59b6-490b-879d-7a6d925dd08c"
+						 version="2"
+						 xsi:type="c:UserType">
+					<name>jack</name>
+					<metadata>
+						<modifyTimestamp>2018-03-20T20:42:56.634+01:00</modifyTimestamp>
+						<modifierRef oid="00000000-0000-0000-0000-000000000002"
+									 relation="org:default"
+									 type="c:UserType"/>
+						<modifyChannel>http://midpoint.evolveum.com/xml/ns/public/model/channels-3#rest</modifyChannel>
+					</metadata>
+					<operationExecution id="1">
+						<timestamp>2018-03-20T20:42:56.671+01:00</timestamp>
+						<operation>
+							<objectDelta>
+								<t:changeType>modify</t:changeType>
+								<t:objectType>c:UserType</t:objectType>
+							</objectDelta>
+							<executionResult>
+								<operation>com.evolveum.midpoint.model.impl.lens.ChangeExecutor.executeDelta</operation>
+								<status>success</status>
+								<token>1000000000000000366</token>
+							</executionResult>
+							<objectName>jack</objectName>
+						</operation>
+						<status>success</status>
+						<initiatorRef oid="00000000-0000-0000-0000-000000000002"
+									  relation="org:default"
+									  type="c:UserType"/>
+						<channel>http://midpoint.evolveum.com/xml/ns/public/model/channels-3#rest</channel>
+					</operationExecution>
+					<activation>
+						<effectiveStatus>enabled</effectiveStatus>
+						<enableTimestamp>2018-03-20T20:42:56.620+01:00</enableTimestamp>
+					</activation>
+					<iteration>0</iteration>
+					<iterationToken/>
+					<credentials>
+						<password>
+							<metadata>
+								<modifyTimestamp>2018-03-20T20:42:56.620+01:00</modifyTimestamp>
+								<modifierRef oid="00000000-0000-0000-0000-000000000002"
+											 relation="org:default"
+											 type="c:UserType"/>
+								<modifyChannel>http://midpoint.evolveum.com/xml/ns/public/model/channels-3#rest</modifyChannel>
+							</metadata>
+							<value>
+								<t:encryptedData>
+									<t:encryptionMethod>
+										<t:algorithm>http://www.w3.org/2001/04/xmlenc#aes128-cbc</t:algorithm>
+									</t:encryptionMethod>
+									<t:keyInfo>
+										<t:keyName>E3sp9hDHnXYEVXDSVipQA4878sU=</t:keyName>
+									</t:keyInfo>
+									<t:cipherData>
+										<t:cipherValue>y6qOh6xBFma0eCy2SARS4oOGzdwrFuc4iAFbtICL8Ec=</t:cipherValue>
+									</t:cipherData>
+								</t:encryptedData>
+							</value>
+						</password>
+					</credentials>
+				</s:value>
+				<s:result>
+					<operation>com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.process</operation>
+					<status>success</status>
+					<token>1000000000000000406</token>
+					<partialResults>
+						<operation>com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute</operation>
+						<status>success</status>
+						<params>
+							<entry key="value">
+								<paramValue>PRV(oid=229487cb-59b6-490b-879d-7a6d925dd08c, targetType={http://midpoint.evolveum.com/xml/ns/public/common/common-3}UserType)</paramValue>
+							</entry>
+						</params>
+						<token>1000000000000000407</token>
+					</partialResults>
+					<partialResults>
+						<operation>com.evolveum.midpoint.model.impl.scripting.actions.ModifyExecutor.execute</operation>
+						<status>success</status>
+						<params>
+							<entry key="delta">
+								<paramValue>ObjectDelta(UserType:229487cb-59b6-490b-879d-7a6d925dd08c,MODIFY: PropertyDelta(activation / validTo, REPLACE))</paramValue>
+							</entry>
+							<entry key="value">
+								<paramValue>POV:user:229487cb-59b6-490b-879d-7a6d925dd08c(jack)</paramValue>
+							</entry>
+						</params>
+						<token>1000000000000000408</token>
+					</partialResults>
+				</s:result>
+			</s:item>
+		</s:dataOutput>
+		<s:consoleOutput>Modified user:229487cb-59b6-490b-879d-7a6d925dd08c(jack)
+		</s:consoleOutput>
+	</apti:output>
+	<apti:result>
+		<operation>com.evolveum.midpoint.model.impl.ModelRestService.executeScript</operation>
+		<status>fatal_error</status>
+		<token>1000000000000000389</token>
+		<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+		<partialResults>
+			<operation>class com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression</operation>
+			<status>fatal_error</status>
+			<minor>true</minor>
+			<token>1000000000000000393</token>
+			<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+			<partialResults>
+				<operation>class com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression</operation>
+				<status>fatal_error</status>
+				<minor>true</minor>
+				<token>1000000000000000394</token>
+				<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+				<partialResults>
+					<operation>com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute</operation>
+					<status>fatal_error</status>
+					<params>
+						<entry key="value">
+							<paramValue>PRV(oid=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, targetType={http://midpoint.evolveum.com/xml/ns/public/common/common-3}UserType)</paramValue>
+						</entry>
+					</params>
+					<token>1000000000000000395</token>
+					<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+					<partialResults>
+						<operation>com.evolveum.midpoint.model.api.ModelService.getObject</operation>
+						<status>fatal_error</status>
+						<minor>true</minor>
+						<params>
+							<entry key="options"/>
+							<entry key="oid">
+								<paramValue>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</paramValue>
+							</entry>
+							<entry key="class">
+								<paramValue>http://midpoint.evolveum.com/xml/ns/public/common/common-3#UserType</paramValue>
+							</entry>
+						</params>
+						<token>1000000000000000396</token>
+						<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+						<details>com.evolveum.midpoint.util.exception.ObjectNotFoundException: Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.
+							com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.throwObjectNotFoundException(ObjectRetriever.java:220)
+							com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectInternal(ObjectRetriever.java:194)
+							com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectAttempt(ObjectRetriever.java:97)
+							com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.lambda$getObject$0(SqlRepositoryServiceImpl.java:172)
+							com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.executeAttempts(SqlRepositoryServiceImpl.java:192)
+							com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.getObject(SqlRepositoryServiceImpl.java:171)
+							com.evolveum.midpoint.repo.cache.RepositoryCache.getObject(RepositoryCache.java:221)
+							com.evolveum.midpoint.model.impl.ModelObjectResolver.getObject(ModelObjectResolver.java:172)
+							com.evolveum.midpoint.model.impl.controller.ModelController.getObject(ModelController.java:217)
+							com.evolveum.midpoint.model.impl.scripting.helpers.OperationsHelper.getObject(OperationsHelper.java:110)
+							com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute(ResolveExecutor.java:76)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executeAction(ScriptingExpressionEvaluator.java:223)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:202)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:183)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executePipeline(ScriptingExpressionEvaluator.java:232)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:192)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:170)
+							com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:146)
+							com.evolveum.midpoint.model.impl.controller.ModelController.evaluateExpression(ModelController.java:2002)
+							com.evolveum.midpoint.model.impl.ModelRestService.executeScript(ModelRestService.java:932)
+							sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+							sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+							sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+							java.lang.reflect.Method.invoke(Method.java:498)
+							org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:179)
+							org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+							org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:192)
+							org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:103)
+							org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:59)
+							org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:96)
+							org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+							org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+							org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:267)
+							org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:247)
+							org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:79)
+							org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+							org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:190)
+							org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)
+							org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:170)
+							org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)
+							org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+							org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:219)
+							org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+							org.eclipse.jetty.server.Server.handle(Server.java:564)
+							org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:317)
+							org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+							org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+							org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)
+							org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+							org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)
+							org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)
+							org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+							org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)
+							org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)
+							org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)
+							java.lang.Thread.run(Thread.java:748)
+						</details>
+						<partialResults>
+							<operation>com.evolveum.midpoint.repo.api.RepositoryService.getObject</operation>
+							<status>fatal_error</status>
+							<minor>true</minor>
+							<params>
+								<entry key="type">
+									<paramValue>com.evolveum.midpoint.xml.ns._public.common.common_3.UserType</paramValue>
+								</entry>
+								<entry key="oid">
+									<paramValue>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</paramValue>
+								</entry>
+							</params>
+							<token>1000000000000000397</token>
+							<message>Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.</message>
+							<details>com.evolveum.midpoint.util.exception.ObjectNotFoundException: Object of type 'UserType' with oid 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' was not found.
+								com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.throwObjectNotFoundException(ObjectRetriever.java:220)
+								com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectInternal(ObjectRetriever.java:194)
+								com.evolveum.midpoint.repo.sql.helpers.ObjectRetriever.getObjectAttempt(ObjectRetriever.java:97)
+								com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.lambda$getObject$0(SqlRepositoryServiceImpl.java:172)
+								com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.executeAttempts(SqlRepositoryServiceImpl.java:192)
+								com.evolveum.midpoint.repo.sql.SqlRepositoryServiceImpl.getObject(SqlRepositoryServiceImpl.java:171)
+								com.evolveum.midpoint.repo.cache.RepositoryCache.getObject(RepositoryCache.java:221)
+								com.evolveum.midpoint.model.impl.ModelObjectResolver.getObject(ModelObjectResolver.java:172)
+								com.evolveum.midpoint.model.impl.controller.ModelController.getObject(ModelController.java:217)
+								com.evolveum.midpoint.model.impl.scripting.helpers.OperationsHelper.getObject(OperationsHelper.java:110)
+								com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute(ResolveExecutor.java:76)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executeAction(ScriptingExpressionEvaluator.java:223)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:202)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:183)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.executePipeline(ScriptingExpressionEvaluator.java:232)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:192)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:170)
+								com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression(ScriptingExpressionEvaluator.java:146)
+								com.evolveum.midpoint.model.impl.controller.ModelController.evaluateExpression(ModelController.java:2002)
+								com.evolveum.midpoint.model.impl.ModelRestService.executeScript(ModelRestService.java:932)
+								sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+								sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+								sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+								java.lang.reflect.Method.invoke(Method.java:498)
+								org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:179)
+								org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+								org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:192)
+								org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:103)
+								org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:59)
+								org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:96)
+								org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+								org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+								org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:267)
+								org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:247)
+								org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:79)
+								org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+								org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:190)
+								org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)
+								org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:170)
+								org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)
+								org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+								org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:219)
+								org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+								org.eclipse.jetty.server.Server.handle(Server.java:564)
+								org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:317)
+								org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+								org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+								org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)
+								org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+								org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)
+								org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)
+								org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+								org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)
+								org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)
+								org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)
+								java.lang.Thread.run(Thread.java:748)
+							</details>
+						</partialResults>
+					</partialResults>
+				</partialResults>
+				<partialResults>
+					<operation>com.evolveum.midpoint.model.impl.scripting.actions.ResolveExecutor.execute</operation>
+					<status>success</status>
+					<params>
+						<entry key="value">
+							<paramValue>PRV(oid=229487cb-59b6-490b-879d-7a6d925dd08c, targetType={http://midpoint.evolveum.com/xml/ns/public/common/common-3}UserType)</paramValue>
+						</entry>
+					</params>
+					<token>1000000000000000398</token>
+				</partialResults>
+			</partialResults>
+			<partialResults>
+				<operation>class com.evolveum.midpoint.model.impl.scripting.ScriptingExpressionEvaluator.evaluateExpression</operation>
+				<status>success</status>
+				<minor>true</minor>
+				<token>1000000000000000399</token>
+				<partialResults>
+					<operation>com.evolveum.midpoint.model.impl.scripting.actions.ModifyExecutor.execute</operation>
+					<status>success</status>
+					<count>2</count>
+					<params>
+						<entry key="delta">
+							<paramValue>[various values]</paramValue>
+						</entry>
+						<entry key="value">
+							<paramValue>[various values]</paramValue>
+						</entry>
+					</params>
+					<token>1000000000000000400</token>
+				</partialResults>
+			</partialResults>
+		</partialResults>
+	</apti:result>
+</apti:executeScriptResponse>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="unit" parallel="false" verbose="1">
+    <test name="Client Basic" preserve-order="true" parallel="false" verbose="1">
+        <classes>
+            <class name="com.evolveum.midpoint.client.impl.restjaxb.TestBasic"/>
+            <class name="com.evolveum.midpoint.client.impl.restjaxb.TestServiceUtil"/>
+        </classes>
+    </test>
+</suite>

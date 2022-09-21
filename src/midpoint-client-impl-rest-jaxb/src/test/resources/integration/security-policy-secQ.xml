@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2022 Evolveum
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<securityPolicy oid="300b4418-234e-4dbc-ae09-7216c8ea9055"
+                xmlns='http://midpoint.evolveum.com/xml/ns/public/common/common-3'>
+    <name>Custom Security Policy</name>
+    <authentication>
+        <modules>
+            <loginForm>
+                <name>loginForm</name>
+            </loginForm>
+            <httpBasic>
+                <name>httpBasic</name>
+            </httpBasic>
+            <httpSecQ>
+                <name>httpSecQ</name>
+            </httpSecQ>
+        </modules>
+        <sequence>
+            <name>admin-gui-default</name>
+            <displayName>Default gui sequence</displayName>
+            <channel>
+                <default>true</default>
+                <channelId>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#user</channelId>
+                <urlSuffix>gui-default</urlSuffix>
+            </channel>
+            <module>
+                <name>loginForm</name>
+                <order>1</order>
+                <necessity>sufficient</necessity>
+            </module>
+        </sequence>
+        <sequence>
+            <name>rest-default</name>
+            <channel>
+                <default>true</default>
+                <channelId>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#rest</channelId>
+                <urlSuffix>rest-default</urlSuffix>
+            </channel>
+            <module>
+                <name>httpBasic</name>
+                <order>1</order>
+                <necessity>sufficient</necessity>
+            </module>
+            <module>
+                <name>httpSecQ</name>
+                <order>1</order>
+                <necessity>sufficient</necessity>
+            </module>
+        </sequence>
+        <sequence>
+            <name>actuator-default</name>
+            <channel>
+                <default>true</default>
+                <channelId>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#actuator</channelId>
+                <urlSuffix>actuator-default</urlSuffix>
+            </channel>
+            <module>
+                <name>httpBasic</name>
+                <order>1</order>
+                <necessity>sufficient</necessity>
+            </module>
+        </sequence>
+        <ignoredLocalPath>/actuator/health</ignoredLocalPath>
+    </authentication>
+    <credentials>
+        <password>
+            <minOccurs>0</minOccurs>
+            <lockoutMaxFailedAttempts>3</lockoutMaxFailedAttempts>
+            <lockoutFailedAttemptsDuration>PT3M</lockoutFailedAttemptsDuration>
+            <lockoutDuration>PT15M</lockoutDuration>
+            <valuePolicyRef oid="00000000-0000-0000-0000-000000000003"/>
+        </password>
+        <securityQuestions>
+            <maxAge>P90D</maxAge>
+            <lockoutMaxFailedAttempts>3</lockoutMaxFailedAttempts>
+            <lockoutFailedAttemptsDuration>PT3M</lockoutFailedAttemptsDuration>
+            <lockoutDuration>PT15M</lockoutDuration>
+            <valuePolicyRef oid="00000000-0000-0000-0000-000000000003" relation="org:default" type="c:ValuePolicyType">
+                <!-- Default Password Policy -->
+            </valuePolicyRef>
+            <questionNumber>1</questionNumber>
+            <question>
+                <identifier>id1</identifier>
+                <enabled>true</enabled>
+                <questionText>How are you?</questionText>
+            </question>
+            <question>
+                <identifier>id2</identifier>
+                <enabled>true</enabled>
+                <questionText>What's your favorite color?</questionText>
+            </question>
+        </securityQuestions>
+    </credentials>
+</securityPolicy>
